@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+plt.style.use("fivethirtyeight")
 
 def mse(y_true, y_pred):
     num_samples = len(y_true)
@@ -50,3 +51,12 @@ print(f"Prediction: {pred}")
 # loss
 loss = model.loss
 print(f"Loss: {loss}")
+
+
+# plotting the loss curve
+plt.figure(figsize=(8, 5))
+plt.plot(model.loss, label = "MSE Loss")
+plt.title("Loss Curve")
+plt.xlabel("Iterations")
+plt.ylabel("Loss")
+plt.show()
